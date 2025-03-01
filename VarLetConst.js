@@ -26,9 +26,12 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 rl.question("Enter your name :", function (name) {
-  rl.question("Enter you email:", function (email) {
-    console.log(`Name: ${name} , Email: ${email}`);
-    rl.close();
+  rl.question("Enter your email:", function (email) {
+    rl.question("Enter ou father name:" , function(fatherName){
+
+      console.log(`Name: ${name} , Email: ${email} , fatherName: ${fatherName}`);
+      rl.close();
+    })
   });
 });
 
