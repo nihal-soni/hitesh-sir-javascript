@@ -119,6 +119,6 @@ console.log(obj1.age); // 30 (both obj1 and obj2 reference the same object)
 
 // Type of  Data	         Stores primitive values	                               Stores objects and reference types
 // Access Speed	               Fast (direct access)	                                     Slower (indirect reference)
-// Memory Management     	Auto-managed (pops off after execution)              	  Managed via garbage collection
-// Usage	                 Function execution, local variables	                            Complex objects, global data
+// Memory Management     	Auto-managed (pops off after execution)                   	  Managed via garbage collection
+// Usage	                 Function execution, local variables	                        Complex objects, global data
 // Reference Type?	           No (stores actual value)	                               Yes (stores reference to the object)
