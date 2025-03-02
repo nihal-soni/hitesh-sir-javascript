@@ -3,9 +3,9 @@
 
 // 1. Declaring Strings
 
-// let singleQuote = 'Hello, World!';
-// let doubleQuote = "Hello, World!";
-// let templateLiteral = `Hello, World!`;
+let singleQuote = 'Hello, World!';
+let doubleQuote = "Hello, World!";
+let templateLiteral = `Hello, World!`;
 
 
 // 💡 Best Practice
@@ -16,8 +16,8 @@
 // 2. String Properties
 // (i) Length of a String
 
-// let text = "JavaScript";
-// console.log(text.length); // 10
+let texttry = "JavaScript";
+console.log(texttry.length); // 10
 
 // 3. String Methods
 
@@ -29,58 +29,60 @@
 // console.log(str.charAt(1)); // 'a'
 
 // (ii) String Concatenation
+
 // Using + or concat()
-// let first = "Hello";
-// let second = "World";
-// console.log(first + " " + second); // Hello World
-// console.log(first.concat(" ", second)); // Hello World
+
+let first = "Hello";
+let second = "World";
+console.log(first + " " + second); // Hello World
+console.log(first.concat(" ", second)); // Hello World
 
 // (iii) Template Literals (ES6)
 
-// let name = "John";
-// console.log(`Hello, ${name}!`); // Hello, John!
+let name = "John";
+console.log(`Hello, ${name}!`); // Hello, John!
 
 // (iv) Changing Case
 
-// let text = "JavaScript";
-// console.log(text.toUpperCase()); // "JAVASCRIPT"
-// console.log(text.toLowerCase()); // "javascript"
+let text = "JavaScript";
+console.log(text.toUpperCase()); // "JAVASCRIPT"
+console.log(text.toLowerCase()); // "javascript"
 
 
 // (v) Trimming Strings
 
-// let str = "   JavaScript   ";
-// console.log(str.trim());  // "JavaScript"
-// console.log(str.trimStart()); // "JavaScript   "
-// console.log(str.trimEnd());   // "   JavaScript"
+let str = "   JavaScript   ";
+console.log(str.trim());  // "JavaScript"
+console.log(str.trimStart()); // "JavaScript   "
+console.log(str.trimEnd());   // "   JavaScript"
 
 // (vi) Extracting a Substring
 // slice(start, end): Extracts part of a string
 // substring(start, end): Similar to slice, but does not accept negative indices
 // substr(start, length): Extracts a substring of a given length
 
-// let str = "JavaScript";
-// console.log(str.slice(0, 4)); // "Java"
-// console.log(str.substring(0, 4)); // "Java"
-// console.log(str.substr(4, 6)); // "Script"
+let str1 = "JavaScript";
+console.log(str1.slice(0, 4)); // "Java"
+console.log(str1.substring(0, 4)); // "Java"
+console.log(str1.substr(4, 6)); // "Script"
 
 // (vii) Replacing Part of a String
 
-// let text = "I love JavaScript";
-// console.log(text.replace("JavaScript", "Python")); // "I love Python"
+let text1 = "I love JavaScript";
+console.log(text1.replace("JavaScript", "Python")); // "I love Python"
 
 
 // For global replacement, use a regular expression with g flag:
 
-// let text = "JavaScript is great. JavaScript is powerful.";
-// console.log(text.replace(/JavaScript/g, "Python"));
-// // "Python is great. Python is powerful."
+let text2 = "JavaScript is great. JavaScript is powerful.";
+console.log(text2.replace(/JavaScript/g, "Python"));
+// "Python is great. Python is powerful."
 
 
 // (viii) Splitting a String
 
-// let text = "Apple, Banana, Cherry";
-// console.log(text.split(", ")); // ["Apple", "Banana", "Cherry"]
+let text3 = "Apple, Banana, Cherry";
+console.log(text.split(", ")); // ["Apple", "Banana", "Cherry"]
 
 
 // (ix) Checking for Substrings
@@ -88,16 +90,16 @@
 // startsWith(): Checks if a string starts with a specific substring.
 // endsWith(): Checks if a string ends with a specific substring.
 
-// let sentence = "JavaScript is amazing!";
-// console.log(sentence.includes("JavaScript")); // true
-// console.log(sentence.startsWith("Java")); // true
-// console.log(sentence.endsWith("amazing!")); // true
+let sentence = "JavaScript is amazing!";
+console.log(sentence.includes("JavaScript")); // true
+console.log(sentence.startsWith("Java")); // true
+console.log(sentence.endsWith("amazing!")); // true
 
 
 // (x) Repeating a String
 
-let str = "Hello ";
-console.log(str.repeat(3)); // "Hello Hello Hello "
+let str3 = "Hello ";
+console.log(str3.repeat(3)); // "Hello Hello Hello "
 
 
 // 4. String Escape Characters
