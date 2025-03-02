@@ -8,6 +8,8 @@ function reverseString1(str2){
 }
 console.log(reverseString1("Nihal"));
 
-
-
+function reverseString2(str3){
+    return str3.split("").reverse().join("");
+}
+console.log(reverseString2("Hello World"));
 // this is the simple way of reversing a strings 
