@@ -130,3 +130,19 @@ console.log(double(5)); // Output: 10
 
 // multiplier(2) returns a function that multiplies by 2.
 // double(5) executes that function, returning 10.
+
+
+
+// 8. Function with Rest Parameters (...args)
+// A function that accepts a variable number of arguments.
+
+
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+
+// 🔹 Explanation:
+
+// ...numbers collects all arguments into an array.
+// .reduce() sums all elements.
