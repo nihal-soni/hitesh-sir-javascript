@@ -1,0 +1,171 @@
+avaScript Execution Context (Step-by-Step Explanation)
+✅ What is Execution Context?
+
+Execution Context (EC) is the environment in which JavaScript code is executed. It determines:
+
+1. How JavaScript code is executed
+2. How variables and functions are stored in memory
+3. How scope and closures work
+
+
+
+🎯 Types of Execution Contexts in JavaScript
+There are three types of execution contexts:
+
+1️⃣ Global Execution Context (GEC)
+
+Created when JavaScript first runs.
+this in the global execution context refers to:
+window object in browsers
+global object in Node.js
+
+2️⃣ Function Execution Context (FEC)
+
+Created whenever a function is called.
+Each function has its own execution context.
+Can have nested execution contexts (functions inside functions).
+
+
+3️⃣ Eval Execution Context
+Created when eval() is used (rarely used in modern JavaScript).
+
+
+
+
+🔥 How JavaScript Code Executes (Behind the Scenes)
+Every JavaScript program runs in two phases:
+
+🔷 1️⃣ Creation Phase (Memory Allocation)
+
+The JavaScript engine allocates memory for variables & functions.
+Variables are initialized with undefined.
+Functions are stored in memory as a whole.
+
+🔶 2️⃣ Execution Phase (Code Execution)
+
+Variables get assigned values.
+Functions get executed.
+
+
+
+console.log(x);  // ❓ What will this print?
+var x = 5;
+console.log(x);  // 5
+
+function greet() {
+  console.log("Hello, Nihal!");
+}
+greet();
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Step 1: Creation Phase (Memory Allocation) 
+
+Global Execution Context (GEC) is created.
+
+var x is assigned undefined in memory.
+
+greet() function is stored in memory.
+
+Step 2: Execution Phase
+
+console.log(x); → Prints undefined (because x is hoisted but not assigned yet).
+
+x = 5; → Now x gets the value 5.
+
+console.log(x); → Prints 5.
+
+greet(); → Calls the function, printing "Hello, Nihal!".
+
+
+
+🎯 Example: Function Execution Context
+
+function outer() {
+  var a = 10;
+  function inner() {
+    var b = 20;
+    console.log(a + b);
+  }
+  inner();
+}
+outer();
+
+🔄 Step-by-Step Execution
+Global Execution Context (GEC) is created.
+outer() function is stored in memory.
+outer() is called → New Function Execution Context (FEC) is created.
+a = 10 is assigned inside outer().
+inner() is called → New Function Execution Context (FEC) is created for inner().
+b = 20 is assigned inside inner().
+console.log(a + b); → Prints 30.
+Execution Context for inner() is destroyed.
+Execution Context for outer() is destroyed.
+🔥 Call Stack (Execution Context Stack)
+JavaScript uses a Call Stack to manage execution contexts.
+
+📌 Example: Understanding the Call Stack
+
+function first() {
+  console.log("First");
+  second();
+}
+
+function second() {
+  console.log("Second");
+  third();
+}
+
+function third() {
+  console.log("Third");
+}
+
+first();
+
+Step-by-Step Call Stack Execution
+1️⃣ Global Execution Context (GEC) is created.
+2️⃣ first() is called → Push first() onto the stack.
+3️⃣ console.log("First"); → Prints "First".
+4️⃣ second() is called → Push second() onto the stack.
+5️⃣ console.log("Second"); → Prints "Second".
+6️⃣ third() is called → Push third() onto the stack.
+7️⃣ console.log("Third"); → Prints "Third".
+8️⃣ third() completes → Removed from the stack.
+9️⃣ second() completes → Removed from the stack.
+🔟 first() completes → Removed from the stack.
+
+🚀 Key Takeaways
+✅ Execution Context is the environment where JavaScript code runs.
+✅ Global Execution Context (GEC) is created first.
+✅ Each function call creates a new Function Execution Context (FEC).
+✅ JavaScript runs in two phases: Memory Allocation & Execution.
+✅ Call Stack manages execution contexts.
+
+🔥 Interview Questions on Execution Context
+
+❓ Q1: What are the different types of Execution Contexts in JavaScript?
+
+✅ Answer:
+
+Global Execution Context (GEC)
+Function Execution Context (FEC)
+Eval Execution Context (rarely used)
+
+❓ Q2: What will be the output of the following code?
+
+console.log(a);
+var a = 10;
+console.log(a);
+✅ Answer:
+undefined
+10
+
+Explanation:
+
+Memory Phase: var a is hoisted and initialized as undefined.
+Execution Phase: First console.log(a) prints undefined, then a = 10, and second console.log(a) prints 10.
+
+❓ Q3: Explain the role of the Call Stack in JavaScript.
+✅ Answer:
+
+The Call Stack keeps track of function calls.
+Each function call adds an execution context to the stack.
+When a function completes, its execution context is removed from the stack.

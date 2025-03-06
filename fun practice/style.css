@@ -1,0 +1,104 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: white;
+    padding-top: 80px; /* Prevent content from hiding under navbar */
+}
+
+/* Sticky Floating Navbar */
+.navbar {
+    position: fixed;
+    top: 20px; /* Floating effect */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Adjust width */
+    max-width: 1100px; /* Keeps it from going full width */
+    background: #000000; /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 15px; /* Rounded edges */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensures navbar stays above other content */
+}
+
+/* Navbar Container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+/* Logo */
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: white;
+}
+
+/* Sign-in and Download */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sign-in {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.sign-in:hover {
+    color: white;
+}
+
+/* Download Button */
+.download-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #e6e6e6;
+}
+
+/* Content to enable scrolling */
+.content {
+    text-align: center;
+    padding: 100px 20px;
+    height: 200vh; /* Allows scrolling */
+}

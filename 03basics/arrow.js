@@ -7,7 +7,9 @@ const user = {
       }
 }
 
-// console.log(welcomeMessage
+user.welcomeMessage() // this will print Nihal soni
+user.username = "sam"
+user.welcomeMessage()  //this will print sam 
 
 
 const addtwo = (num1 , num2) => {
