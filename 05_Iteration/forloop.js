@@ -34,10 +34,10 @@ for (let i = 5; i >= 1; i--) {            // Looping Backwards
 // Output: 5, 4, 3, 2, 1
 
 let myArray = ["Flash" , "Batman" , "Superman"]
-console.log(myArray.length)
+// console.log(myArray.length)
 for(let i = 0; i < myArray.length; i++){
     const element = myArray[i];
-    console.log(element)
+    // console.log(element)
 }                                   // example of array
               
 
@@ -54,5 +54,5 @@ for (let i = 1; i <= 9;  i++){
 
 for (let i = 1; i <= 7; i++){
     if (i == 4) break;
-    console.log(i)
+    // console.log(i)
 }
