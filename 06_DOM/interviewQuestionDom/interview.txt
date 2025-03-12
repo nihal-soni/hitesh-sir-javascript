@@ -1,0 +1,156 @@
+DOM Interview Questions and Answers
+1. What is the DOM?
+The DOM (Document Object Model) is a programming interface that represents the structure of a webpage as a hierarchical tree of objects. It allows JavaScript to manipulate the content and structure dynamically.
+
+2. How can you access elements in the DOM?
+You can access elements using:
+
+document.getElementById('id') – Selects an element by ID.
+document.getElementsByClassName('class') – Selects elements by class.
+document.getElementsByTagName('tag') – Selects elements by tag name.
+document.querySelector('selector') – Selects the first matching element.
+document.querySelectorAll('selector') – Selects all matching elements.
+3. How do you modify the content of an HTML element using JavaScript?
+Use textContent, innerHTML, or value:
+
+javascript
+Copy
+Edit
+document.getElementById('heading').textContent = "New Text";
+document.getElementById('content').innerHTML = "<p>Updated paragraph</p>";
+document.getElementById('inputField').value = "New Value";
+4. What is the difference between innerHTML, textContent, and innerText?
+innerHTML updates the HTML structure (parses HTML tags).
+textContent updates only the text (ignores HTML tags).
+innerText is similar to textContent, but considers CSS styles like display: none.
+5. How do you dynamically create and append elements in the DOM?
+javascript
+Copy
+Edit
+let newDiv = document.createElement('div');
+newDiv.textContent = "I am a new div";
+document.body.appendChild(newDiv);
+6. What are event listeners in JavaScript?
+Event listeners allow you to handle user interactions like clicks or key presses.
+
+javascript
+Copy
+Edit
+document.getElementById('btn').addEventListener('click', function() {
+    alert('Button Clicked!');
+});
+7. How do you remove an element from the DOM?
+javascript
+Copy
+Edit
+document.getElementById('elementId').remove();
+8. How do you handle DOM events using event delegation?
+Event delegation allows handling multiple child elements efficiently.
+
+javascript
+Copy
+Edit
+document.getElementById('parent').addEventListener('click', function(event) {
+    if (event.target && event.target.classList.contains('child')) {
+        console.log("Child element clicked!");
+    }
+});
+9. What is the difference between the DOM and BOM?
+DOM (Document Object Model) deals with the webpage structure (HTML elements).
+BOM (Browser Object Model) interacts with browser functionalities like window, navigator, history, and location.
+10. What are the different types of nodes in the DOM?
+Element nodes – Represent HTML tags (<div>, <p>, etc.).
+Text nodes – Represent text content inside elements.
+Comment nodes – Represent <!-- comments --> in the HTML.
+Logic-Based JavaScript Interview Questions
+1. Reverse a string without using .reverse()
+javascript
+Copy
+Edit
+function reverseString(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
+console.log(reverseString("hello")); // "olleh"
+2. Find the missing number in an array of 1 to N
+javascript
+Copy
+Edit
+function findMissingNumber(arr) {
+    let n = arr.length + 1;
+    let total = (n * (n + 1)) / 2;
+    let sum = arr.reduce((acc, num) => acc + num, 0);
+    return total - sum;
+}
+console.log(findMissingNumber([1, 2, 4, 5])); // 3
+3. Check if a string is a palindrome
+javascript
+Copy
+Edit
+function isPalindrome(str) {
+    return str === str.split('').reverse().join('');
+}
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("hello")); // false
+4. Find the first non-repeating character in a string
+javascript
+Copy
+Edit
+function firstUniqueChar(str) {
+    let charMap = {};
+    for (let char of str) {
+        charMap[char] = (charMap[char] || 0) + 1;
+    }
+    for (let char of str) {
+        if (charMap[char] === 1) return char;
+    }
+    return null;
+}
+console.log(firstUniqueChar("aabbcdd")); // "c"
+5. Find the factorial of a number using recursion
+javascript
+Copy
+Edit
+function factorial(n) {
+    if (n === 0) return 1;
+    return n * factorial(n - 1);
+}
+console.log(factorial(5)); // 120
+6. Implement a Fibonacci series using memoization
+javascript
+Copy
+Edit
+function fibonacci(n, memo = {}) {
+    if (n in memo) return memo[n];
+    if (n <= 1) return n;
+    memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
+    return memo[n];
+}
+console.log(fibonacci(10)); // 55
+7. Find the longest word in a sentence
+javascript
+Copy
+Edit
+function longestWord(sentence) {
+    return sentence.split(' ').reduce((longest, word) => 
+        word.length > longest.length ? word : longest, "");
+}
+console.log(longestWord("The quick brown fox jumps over the lazy dog")); // "jumps"
+8. Remove duplicates from an array
+javascript
+Copy
+Edit
+function removeDuplicates(arr) {
+    return [...new Set(arr)];
+}
+console.log(removeDuplicates([1, 2, 3, 3, 4, 5, 5])); // [1, 2, 3, 4, 5]
+These questions cover both DOM manipulation concepts and JavaScript coding logic often asked in technical interviews. If you want more in-depth explanations or additional mock interview questions, you can check these sources:
+
+GeeksforGeeks JavaScript Interview Questions
+Edureka JavaScript Questions​
+EDUREKA.CO
+.
+Would you like live coding exercises or mock interviews for better practice? 🚀
