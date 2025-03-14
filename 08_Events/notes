@@ -1,0 +1,106 @@
+// 2. Handling Events in JavaScript
+//    There are different ways to handle events in JavaScript.
+
+// A. Inline Event Handling
+// You can add an event directly inside an HTML tag.
+// <button onclick="alert('Button clicked!')">Click Me</button>
+
+// B. Event Listener using JavaScript
+// The addEventListener() method allows multiple event handlers on the same element.
+
+// document.getElementById("myButton").addEventListener("click", function() {
+// alert("Button clicked!");
+// });
+
+// C. Event Listener with an External Function
+// Instead of an anonymous function, we can pass a named function.
+
+// function handleClick() {
+// alert("Button clicked!");
+// }
+
+// document.getElementById("myButton").addEventListener("click", handleClick);
+
+// 3. Event Object (event)
+//    When an event occurs, JavaScript provides an event object with details about the event.
+
+// document.addEventListener("click", function(event) {
+// console.log("Event Type:", event.type);
+// console.log("X Position:", event.clientX);
+// console.log("Y Position:", event.clientY);
+// });
+
+// 4. Event Propagation (Bubbling & Capturing)
+//    JavaScript events propagate in two phases:
+
+// Bubbling Phase (Default): The event starts from the target element and moves up to the ancestors.
+// Capturing Phase (Optional): The event starts from the root and moves down to the target element.
+
+// Example of Event Bubbling
+
+// document.getElementById("child").addEventListener("click", function() {
+// alert("Child Clicked!");
+// });
+
+// document.getElementById("parent").addEventListener("click", function() {
+// alert("Parent Clicked!");
+// });
+
+// Clicking on #child will trigger both child and parent alerts.
+
+// Stopping Event Bubbling
+// Use event.stopPropagation() to prevent the event from propagating.
+
+// document.getElementById("child").addEventListener("click", function(event) {
+// alert("Child Clicked!");
+// event.stopPropagation(); // Stops bubbling
+// });
+
+// 5. Event Delegation
+//    Instead of adding event listeners to multiple elements, we can use a parent element to handle events for its children.
+
+// Example of Event Delegation
+
+// document.getElementById("parent").addEventListener("click", function(event) {
+// if (event.target.tagName === "BUTTON") {
+// alert("Button clicked: " + event.target.innerText);
+// }
+// });
+// This listens for clicks on all <button> elements inside #parent.
+
+// 6. Removing Event Listeners
+//    Use removeEventListener() to remove an event handler.
+
+// function sayHello() {
+// alert("Hello!");
+// }
+
+// document.getElementById("myButton").addEventListener("click", sayHello);
+// document.getElementById("myButton").removeEventListener("click", sayHello);
+
+// 7. JavaScript Event Examples
+//    Example: Click Event
+
+// document.getElementById("btn").addEventListener("click", function() {
+// alert("Button was clicked!");
+// });
+
+// Example: Keydown Event
+
+// document.addEventListener("keydown", function(event) {
+// console.log("Key pressed:", event.key);
+// });
+
+// Example: Form Submission Event
+// document.getElementById("myForm").addEventListener("submit", function(event) {
+// event.preventDefault(); // Prevent form submission
+// alert("Form submitted!");
+// });
+
+
+// 8. Common Interview Questions on Events
+// What is event bubbling and capturing?
+// How can you prevent the default behavior of an event? (Using event.preventDefault())
+// What is event delegation?
+// What are passive event listeners?
+// How to remove an event listener?
